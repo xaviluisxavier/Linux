@@ -1,368 +1,368 @@
-1 - INFORMAÇÕES DO SISTEMA
-# Exibe informações do sistema Linux
+1 - SYSTEM INFORMATION
+# Display Linux system information
 uname -a
 
-# Exibe informações de lançamento do kernel
+# Display kernel release information
 uname -r
 
-# Mostra qual versão do Red Hat está instalada
+# Show which version of Red Hat installed
 cat /etc/redhat-release
 
-# Mostra há quanto tempo o sistema está rodando + carga
-tempo de atividade
+# Show how long the system has been running + load
+uptime
 
-# Mostra o nome do host do sistema
-nome de anfitrião
+# Show system host name
+hostname
 
-# Exibe todos os endereços IP locais do host.
+# Display all local IP addresses of the host.
 hostname -I
 
-# Mostra o histórico de reinicialização do sistema
-última reinicialização
+# Show system reboot history
+last reboot
 
-# Mostra a data e hora atuais
-encontro
+# Show the current date and time
+date
 
-# Mostra o calendário deste mês
+# Show this month's calendar
 cal
 
-# Mostra quem está online
-W
+# Display who is online
+w
 
-# Quem você está logado como
-Quem sou eu
-2 - INFORMAÇÕES DE HARDWARE
-# Exibe mensagens no buffer de anel do kernel
+# Who you are logged in as
+whoami
+2 - HARDWARE INFORMATION
+# Display messages in kernel ring buffer
 dmesg
 
-# Exibe informações da CPU
+# Display CPU information
 cat /proc/cpuinfo
 
-# Exibe informações de memória
+# Display memory information
 cat /proc/meminfo
 
-# Exibe a memória livre e usada ( -h para legível por humanos, -m para MB, -g para GB.)
-livre -h
+# Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+free -h
 
-# Exibe dispositivos PCI
+# Display PCI devices
 lspci -tv
 
-# Exibir dispositivos USB
+# Display USB devices
 lsusb -tv
 
-# Exibe DMI/SMBIOS (informações de hardware) do BIOS
+# Display DMI/SMBIOS (hardware info) from the BIOS
 dmidecode
 
-# Mostra informações sobre o disco sda
+# Show info about disk sda
 hdparm -i /dev/sda
 
-# Realize um teste de velocidade de leitura no disco sda
+# Perform a read speed test on disk sda
 hdparm -tT /dev/sda
 
-# Teste para blocos ilegíveis no disco sda
+# Test for unreadable blocks on disk sda
 badblocks -s /dev/sda
-3 - MONITORAMENTO E ESTATÍSTICAS DE DESEMPENHO
-# Exiba e gerencie os principais processos
-topo
+3 - PERFORMANCE MONITORING AND STATISTICS
+# Display and manage the top processes
+top
 
-# Visualizador de processo interativo (alternativa superior)
+# Interactive process viewer (top alternative)
 htop
 
-# Exibe estatísticas relacionadas ao processador
+# Display processor related statistics
 mpstat 1
 
-# Exibe estatísticas de memória virtual
+# Display virtual memory statistics
 vmstat 1
 
-# Exibe estatísticas de E/S
+# Display I/O statistics
 iostat 1
 
-# Exibe as últimas 100 mensagens do syslog (Use /var/log/syslog para sistemas baseados em Debian.)
+# Display the last 100 syslog messages  (Use /var/log/syslog for Debian based systems.)
 tail -100 /var/log/messages
 
-# Captura e exibe todos os pacotes na interface eth0
+# Capture and display all packets on interface eth0
 tcpdump -i eth0
 
-# Monitora todo o tráfego na porta 80 (HTTP)
-tcpdump -i eth0 'porta 80'
+# Monitor all traffic on port 80 ( HTTP )
+tcpdump -i eth0 'port 80'
 
-# Lista todos os arquivos abertos no sistema
+# List all open files on the system
 lsof
 
-# Lista os arquivos abertos pelo usuário
-lsof -u usuário
+# List files opened by user
+lsof -u user
 
-# Exibe a memória livre e usada ( -h para legível por humanos, -m para MB, -g para GB.)
-livre -h
+# Display free and used memory ( -h for human readable, -m for MB, -g for GB.)
+free -h
 
-# Executa "df -h", mostrando atualizações periódicas
-assistir df -h
-4 - INFORMAÇÕES DO USUÁRIO E GESTÃO
-# Exibe os IDs de usuário e grupo do seu usuário atual.
-Eu iria
+# Execute "df -h", showing periodic updates
+watch df -h
+4 - USER INFORMATION AND MANAGEMENT
+# Display the user and group ids of your current user.
+id
 
-# Exibe os últimos usuários que efetuaram login no sistema.
-último
+# Display the last users who have logged onto the system.
+last
 
-# Mostra quem está logado no sistema.
-quem
+# Show who is logged into the system.
+who
 
-# Mostra quem está logado e o que está fazendo.
-W
+# Show who is logged in and what they are doing.
+w
 
-# Crie um grupo chamado "teste".
-grupo adicionar teste
+# Create a group named "test".
+groupadd test
 
-# Crie uma conta chamada john, com um comentário de "John Smith" e crie o diretório pessoal do usuário.
+# Create an account named john, with a comment of "John Smith" and create the user's home directory.
 useradd -c "John Smith" -m john
 
-# Excluir a conta john.
+# Delete the john account.
 userdel john
 
-# Adicione a conta john ao grupo de vendas
+# Add the john account to the sales group
 usermod -aG sales john
-5 - COMANDOS DE ARQUIVOS E DIRETÓRIOS
-# Lista todos os arquivos em um formato de listagem longa (detalhado)
+5 - FILE AND DIRECTORY COMMANDS
+# List all files in a long listing (detailed) format
 ls -al
 
-# Exibe o diretório de trabalho atual
+# Display the present working directory
 pwd
 
-#Cria um diretório
-diretório mkdir
+# Create a directory
+mkdir directory
 
-# Remover (excluir) arquivo
-arquivo rm
+# Remove (delete) file
+rm file
 
-# Remove o diretório e seu conteúdo recursivamente
-diretório rm -r
+# Remove the directory and its contents recursively
+rm -r directory
 
-# Força a remoção do arquivo sem solicitar confirmação
-arquivo rm -f
+# Force removal of file without prompting for confirmation
+rm -f file
 
-# Remove o diretório com força recursivamente
-diretório rm -rf
+# Forcefully remove directory recursively
+rm -rf directory
 
-# Copiar arquivo1 para arquivo2
-cp arquivo1 arquivo2
+# Copy file1 to file2
+cp file1 file2
 
-# Copia source_directory recursivamente para o destino. Se o destino existir, copie source_directory para destination, caso contrário, crie um destino com o conteúdo de source_directory.
-cp -r source_directory destino
+# Copy source_directory recursively to destination. If destination exists, copy source_directory into destination, otherwise create destination with the contents of source_directory.
+cp -r source_directory destination
 
-# Renomeie ou mova o arquivo1 para o arquivo2. Se o arquivo2 for um diretório existente, mova o arquivo1 para o diretório arquivo2
-mv arquivo1 arquivo2
+# Rename or move file1 to file2. If file2 is an existing directory, move file1 into directory file2
+mv file1 file2
 
-# Cria um link simbólico para o nome do link
+# Create symbolic link to linkname
 ln -s /path/to/file linkname
 
-# Crie um arquivo vazio ou atualize os tempos de acesso e modificação do arquivo.
-arquivo de toque
+# Create an empty file or update the access and modification times of file.
+touch file
 
-# Visualiza o conteúdo do arquivo
-arquivo gato
+# View the contents of file
+cat file
 
-# Navegue por um arquivo de texto
-menos arquivo
+# Browse through a text file
+less file
 
-# Exibe as primeiras 10 linhas do arquivo
-arquivo principal
+# Display the first 10 lines of file
+head file
 
-# Mostra as últimas 10 linhas do arquivo
-arquivo de cauda
+# Display the last 10 lines of file
+tail file
 
-# Exibe as últimas 10 linhas do arquivo e "siga" o arquivo à medida que ele cresce.
-cauda -f arquivo
-6 - GESTÃO DE PROCESSOS
-# Exibe seus processos atualmente em execução
+# Display the last 10 lines of file and "follow" the file as it grows.
+tail -f file
+6 - PROCESS MANAGEMENT
+# Display your currently running processes
 ps
 
-# Exibe todos os processos atualmente em execução no sistema.
+# Display all the currently running processes on the system.
 ps -ef
 
-# Exibe informações do processo para processname
-ps -ef | nome do processo grep
+# Display process information for processname
+ps -ef | grep processname
 
-# Exiba e gerencie os principais processos
-topo
+# Display and manage the top processes
+top
 
-# Visualizador de processo interativo (alternativa superior)
+# Interactive process viewer (top alternative)
 htop
 
-# Mate o processo com o ID do processo de pid
-matar pid
+# Kill process with process ID of pid
+kill pid
 
-# Mate todos os processos chamados processname
-killall nome do processo
+# Kill all processes named processname
+killall processname
 
-# Inicie o programa em segundo plano
-programa &
+# Start program in the background
+program &
 
-# Exibe jobs parados ou em segundo plano
+# Display stopped or background jobs
 bg
 
-# Traz o trabalho em segundo plano mais recente para o primeiro plano
+# Brings the most recent background job to foreground
 fg
 
-# Traz o job n para o primeiro plano
+# Brings job n to the foreground
 fg n
-7 - PERMISSÕES DE ARQUIVO
-Exemplo de chmod do Linux
-        EXEMPLO DE PERMISSÃO
+7 - FILE PERMISSIONS
+Linux chmod example
+        PERMISSION      EXAMPLE
 
-         U G W
-        rwx rwx rwx chmod 777 nome do arquivo
-        rwx rwx rx chmod 775 nome do arquivo
-        rwx rx rx chmod 755 nome do arquivo
-        rw- rw- r-- chmod 664 nome do arquivo
-        rw- r-- r-- chmod 644 nome do arquivo
+         U   G   W
+        rwx rwx rwx     chmod 777 filename
+        rwx rwx r-x     chmod 775 filename
+        rwx r-x r-x     chmod 755 filename
+        rw- rw- r--     chmod 664 filename
+        rw- r-- r--     chmod 644 filename
 
-# NOTA: Use 777 com moderação!
+# NOTE: Use 777 sparingly!
 
-        LENDA
-        U = usuário
-        G = Grupo
-        W = Mundo
+        LEGEND
+        U = User
+        G = Group
+        W = World
 
-        r = Ler
-        w = escrever
-        x = executar
-        - = sem acesso
-8 - REDE
-# Exibe todas as interfaces de rede e endereço IP
+        r = Read
+        w = write
+        x = execute
+        - = no access
+8 - NETWORKING
+# Display all network interfaces and IP address
 ip a
 
-# Exibe o endereço eth0 e detalhes
+# Display eth0 address and details
 ip addr show dev eth0
 
-# Consultar ou controlar as configurações de hardware e driver de rede
+# Query or control network driver and hardware settings
 ethtool eth0
 
-# Envia solicitação de eco ICMP ao host
+# Send ICMP echo request to host
 ping host
 
-# Exibe informações whois do domínio
-domínio whois
+# Display whois information for domain
+whois domain
 
-# Exibe as informações de DNS do domínio
-cavar domínio
+# Display DNS information for domain
+dig domain
 
-# Pesquisa reversa de IP_ADDRESS
+# Reverse lookup of IP_ADDRESS
 dig -x IP_ADDRESS
 
-# Exibe o endereço IP do DNS para o domínio
-domínio do host
+# Display DNS IP address for domain
+host domain
 
-# Exibe o endereço de rede do nome do host.
-nome do host -i
+# Display the network address of the host name.
+hostname -i
 
-# Exibe todos os endereços IP locais do host.
+# Display all local IP addresses of the host.
 hostname -I
 
-# Baixe http://domain.com/file
+# Download http://domain.com/file
 wget http://domain.com/file
 
-# Exibe portas tcp e udp de escuta e programas correspondentes
+# Display listening tcp and udp ports and corresponding programs
 netstat -nutlp
-9 - ARQUIVOS (ARQUIVOS TAR)
-# Crie o diretório que contém o arquivo tar chamado archive.tar.
-diretório tar cf archive.tar
+9 - ARCHIVES (TAR FILES)
+# Create tar named archive.tar containing directory.
+tar cf archive.tar directory
 
-# Extraia o conteúdo de archive.tar.
+# Extract the contents from archive.tar.
 tar xf archive.tar
 
-# Crie um arquivo tar compactado com gzip archive.tar.gz.
-diretório tar czf archive.tar.gz
+# Create a gzip compressed tar file name archive.tar.gz.
+tar czf archive.tar.gz directory
 
-# Extraia um arquivo tar compactado com gzip.
+# Extract a gzip compressed tar file.
 tar xzf archive.tar.gz
 
-# Cria um arquivo tar com compressão bzip2
-diretório tar cjf archive.tar.bz2
+# Create a tar file with bzip2 compression
+tar cjf archive.tar.bz2 directory
 
-# Extraia um arquivo tar compactado bzip2.
+# Extract a bzip2 compressed tar file.
 tar xjf archive.tar.bz2
-10 - INSTALAÇÃO DE PACOTES
-# Procure um pacote por palavra-chave.
-palavra-chave de pesquisa yum
+10 - INSTALLING PACKAGES
+# Search for a package by keyword.
+yum search keyword
 
-#Instala o pacote.
-pacote de instalação yum
+# Install package.
+yum install package
 
-# Exibe a descrição e informações resumidas sobre o pacote.
-pacote de informações yum
+# Display description and summary information about package.
+yum info package
 
-# Instale o pacote do arquivo local chamado package.rpm
-rpm -i pacote.rpm
+# Install package from local file named package.rpm
+rpm -i package.rpm
 
-# Remova/desinstale o pacote.
-yum remover pacote
+# Remove/uninstall package.
+yum remove package
 
-# Instale o software a partir do código-fonte.
-código-fonte tar zxvf.tar.gz
-código fonte do cd
+# Install software from source code.
+tar zxvf sourcecode.tar.gz
+cd sourcecode
 ./configure
-faço
-fazer instalar
-11 - PESQUISA
-# Procura por padrão no arquivo
-arquivo de padrão grep
+make
+make install
+11 - SEARCH
+# Search for pattern in file
+grep pattern file
 
-# Procura recursivamente por padrão no diretório
-grep -r diretório padrão
+# Search recursively for pattern in directory
+grep -r pattern directory
 
-# Encontre arquivos e diretórios por nome
-localizar nome
+# Find files and directories by name
+locate name
 
-# Encontre arquivos em /home/john que comecem com "prefix".
-encontre /home/john -name 'prefixo*'
+# Find files in /home/john that start with "prefix".
+find /home/john -name 'prefix*'
 
-# Encontre arquivos maiores que 100 MB em /home
-encontrar /home -size +100M
-12 - LOGINS SSH
-# Conecte-se ao host como seu nome de usuário local.
-host ssh
+# Find files larger than 100MB in /home
+find /home -size +100M
+12 - SSH LOGINS
+# Connect to host as your local username.
+ssh host
 
-# Conecte-se ao host como usuário
-ssh usuário@host
+# Connect to host as user
+ssh user@host
 
-# Conecte-se ao host usando a porta
-ssh -p porta usuário@host
-13 - TRANSFERÊNCIAS DE ARQUIVOS
-# Copiar arquivo.txt seguro para a pasta /tmp no servidor
-scp arquivo.txt servidor:/tmp
+# Connect to host using port
+ssh -p port user@host
+13 - FILE TRANSFERS
+# Secure copy file.txt to the /tmp folder on server
+scp file.txt server:/tmp
 
-# Copie os arquivos *.html do servidor para a pasta local /tmp.
-servidor scp:/var/www/*.html /tmp
+# Copy *.html files from server to the local /tmp folder.
+scp server:/var/www/*.html /tmp
 
-# Copie todos os arquivos e diretórios recursivamente do servidor para a pasta /tmp do sistema atual.
-scp -r servidor:/var/www /tmp
+# Copy all files and directories recursively from server to the current system's /tmp folder.
+scp -r server:/var/www /tmp
 
-# Sincroniza /home com /backups/home
+# Synchronize /home to /backups/home
 rsync -a /home /backups/
 
-# Sincronize arquivos/diretórios entre o sistema local e remoto com a compactação habilitada
+# Synchronize files/directories between the local and remote system with compression enabled
 rsync -avz /home server:/backups/
-14 - USO DO DISCO
-# Mostra o espaço livre e usado em sistemas de arquivos montados
+14 - DISK USAGE
+# Show free and used space on mounted filesystems
 df -h
 
-# Mostra inodes livres e usados ​​em sistemas de arquivos montados
+# Show free and used inodes on mounted filesystems
 df -i
 
-# Exibe tamanhos e tipos de partições de discos
+# Display disks partitions sizes and types
 fdisk -l
 
-# Exibe o uso do disco para todos os arquivos e diretórios em formato legível por humanos
-du-ah
+# Display disk usage for all files and directories in human readable format
+du -ah
 
-# Exibe o uso total do disco fora do diretório atual
+# Display total disk usage off the current directory
 du -sh
-15 - NAVEGAÇÃO NO DIRETÓRIO
-# Para subir um nível da árvore de diretórios. (Mude para o diretório pai.)
+15 - DIRECTORY NAVIGATION
+# To go up one level of the directory tree.  (Change into the parent directory.)
 cd ..
 
-# Vá para o diretório $HOME
+# Go to the $HOME directory
 cd
 
-# Mude para o diretório /etc
+# Change to the /etc directory
 cd /etc
