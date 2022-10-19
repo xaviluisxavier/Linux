@@ -1,0 +1,368 @@
+1 - INFORMAÇÕES DO SISTEMA
+# Exibe informações do sistema Linux
+uname -a
+
+# Exibe informações de lançamento do kernel
+uname -r
+
+# Mostra qual versão do Red Hat está instalada
+cat /etc/redhat-release
+
+# Mostra há quanto tempo o sistema está rodando + carga
+tempo de atividade
+
+# Mostra o nome do host do sistema
+nome de anfitrião
+
+# Exibe todos os endereços IP locais do host.
+hostname -I
+
+# Mostra o histórico de reinicialização do sistema
+última reinicialização
+
+# Mostra a data e hora atuais
+encontro
+
+# Mostra o calendário deste mês
+cal
+
+# Mostra quem está online
+W
+
+# Quem você está logado como
+Quem sou eu
+2 - INFORMAÇÕES DE HARDWARE
+# Exibe mensagens no buffer de anel do kernel
+dmesg
+
+# Exibe informações da CPU
+cat /proc/cpuinfo
+
+# Exibe informações de memória
+cat /proc/meminfo
+
+# Exibe a memória livre e usada ( -h para legível por humanos, -m para MB, -g para GB.)
+livre -h
+
+# Exibe dispositivos PCI
+lspci -tv
+
+# Exibir dispositivos USB
+lsusb -tv
+
+# Exibe DMI/SMBIOS (informações de hardware) do BIOS
+dmidecode
+
+# Mostra informações sobre o disco sda
+hdparm -i /dev/sda
+
+# Realize um teste de velocidade de leitura no disco sda
+hdparm -tT /dev/sda
+
+# Teste para blocos ilegíveis no disco sda
+badblocks -s /dev/sda
+3 - MONITORAMENTO E ESTATÍSTICAS DE DESEMPENHO
+# Exiba e gerencie os principais processos
+topo
+
+# Visualizador de processo interativo (alternativa superior)
+htop
+
+# Exibe estatísticas relacionadas ao processador
+mpstat 1
+
+# Exibe estatísticas de memória virtual
+vmstat 1
+
+# Exibe estatísticas de E/S
+iostat 1
+
+# Exibe as últimas 100 mensagens do syslog (Use /var/log/syslog para sistemas baseados em Debian.)
+tail -100 /var/log/messages
+
+# Captura e exibe todos os pacotes na interface eth0
+tcpdump -i eth0
+
+# Monitora todo o tráfego na porta 80 (HTTP)
+tcpdump -i eth0 'porta 80'
+
+# Lista todos os arquivos abertos no sistema
+lsof
+
+# Lista os arquivos abertos pelo usuário
+lsof -u usuário
+
+# Exibe a memória livre e usada ( -h para legível por humanos, -m para MB, -g para GB.)
+livre -h
+
+# Executa "df -h", mostrando atualizações periódicas
+assistir df -h
+4 - INFORMAÇÕES DO USUÁRIO E GESTÃO
+# Exibe os IDs de usuário e grupo do seu usuário atual.
+Eu iria
+
+# Exibe os últimos usuários que efetuaram login no sistema.
+último
+
+# Mostra quem está logado no sistema.
+quem
+
+# Mostra quem está logado e o que está fazendo.
+W
+
+# Crie um grupo chamado "teste".
+grupo adicionar teste
+
+# Crie uma conta chamada john, com um comentário de "John Smith" e crie o diretório pessoal do usuário.
+useradd -c "John Smith" -m john
+
+# Excluir a conta john.
+userdel john
+
+# Adicione a conta john ao grupo de vendas
+usermod -aG sales john
+5 - COMANDOS DE ARQUIVOS E DIRETÓRIOS
+# Lista todos os arquivos em um formato de listagem longa (detalhado)
+ls -al
+
+# Exibe o diretório de trabalho atual
+pwd
+
+#Cria um diretório
+diretório mkdir
+
+# Remover (excluir) arquivo
+arquivo rm
+
+# Remove o diretório e seu conteúdo recursivamente
+diretório rm -r
+
+# Força a remoção do arquivo sem solicitar confirmação
+arquivo rm -f
+
+# Remove o diretório com força recursivamente
+diretório rm -rf
+
+# Copiar arquivo1 para arquivo2
+cp arquivo1 arquivo2
+
+# Copia source_directory recursivamente para o destino. Se o destino existir, copie source_directory para destination, caso contrário, crie um destino com o conteúdo de source_directory.
+cp -r source_directory destino
+
+# Renomeie ou mova o arquivo1 para o arquivo2. Se o arquivo2 for um diretório existente, mova o arquivo1 para o diretório arquivo2
+mv arquivo1 arquivo2
+
+# Cria um link simbólico para o nome do link
+ln -s /path/to/file linkname
+
+# Crie um arquivo vazio ou atualize os tempos de acesso e modificação do arquivo.
+arquivo de toque
+
+# Visualiza o conteúdo do arquivo
+arquivo gato
+
+# Navegue por um arquivo de texto
+menos arquivo
+
+# Exibe as primeiras 10 linhas do arquivo
+arquivo principal
+
+# Mostra as últimas 10 linhas do arquivo
+arquivo de cauda
+
+# Exibe as últimas 10 linhas do arquivo e "siga" o arquivo à medida que ele cresce.
+cauda -f arquivo
+6 - GESTÃO DE PROCESSOS
+# Exibe seus processos atualmente em execução
+ps
+
+# Exibe todos os processos atualmente em execução no sistema.
+ps -ef
+
+# Exibe informações do processo para processname
+ps -ef | nome do processo grep
+
+# Exiba e gerencie os principais processos
+topo
+
+# Visualizador de processo interativo (alternativa superior)
+htop
+
+# Mate o processo com o ID do processo de pid
+matar pid
+
+# Mate todos os processos chamados processname
+killall nome do processo
+
+# Inicie o programa em segundo plano
+programa &
+
+# Exibe jobs parados ou em segundo plano
+bg
+
+# Traz o trabalho em segundo plano mais recente para o primeiro plano
+fg
+
+# Traz o job n para o primeiro plano
+fg n
+7 - PERMISSÕES DE ARQUIVO
+Exemplo de chmod do Linux
+        EXEMPLO DE PERMISSÃO
+
+         U G W
+        rwx rwx rwx chmod 777 nome do arquivo
+        rwx rwx rx chmod 775 nome do arquivo
+        rwx rx rx chmod 755 nome do arquivo
+        rw- rw- r-- chmod 664 nome do arquivo
+        rw- r-- r-- chmod 644 nome do arquivo
+
+# NOTA: Use 777 com moderação!
+
+        LENDA
+        U = usuário
+        G = Grupo
+        W = Mundo
+
+        r = Ler
+        w = escrever
+        x = executar
+        - = sem acesso
+8 - REDE
+# Exibe todas as interfaces de rede e endereço IP
+ip a
+
+# Exibe o endereço eth0 e detalhes
+ip addr show dev eth0
+
+# Consultar ou controlar as configurações de hardware e driver de rede
+ethtool eth0
+
+# Envia solicitação de eco ICMP ao host
+ping host
+
+# Exibe informações whois do domínio
+domínio whois
+
+# Exibe as informações de DNS do domínio
+cavar domínio
+
+# Pesquisa reversa de IP_ADDRESS
+dig -x IP_ADDRESS
+
+# Exibe o endereço IP do DNS para o domínio
+domínio do host
+
+# Exibe o endereço de rede do nome do host.
+nome do host -i
+
+# Exibe todos os endereços IP locais do host.
+hostname -I
+
+# Baixe http://domain.com/file
+wget http://domain.com/file
+
+# Exibe portas tcp e udp de escuta e programas correspondentes
+netstat -nutlp
+9 - ARQUIVOS (ARQUIVOS TAR)
+# Crie o diretório que contém o arquivo tar chamado archive.tar.
+diretório tar cf archive.tar
+
+# Extraia o conteúdo de archive.tar.
+tar xf archive.tar
+
+# Crie um arquivo tar compactado com gzip archive.tar.gz.
+diretório tar czf archive.tar.gz
+
+# Extraia um arquivo tar compactado com gzip.
+tar xzf archive.tar.gz
+
+# Cria um arquivo tar com compressão bzip2
+diretório tar cjf archive.tar.bz2
+
+# Extraia um arquivo tar compactado bzip2.
+tar xjf archive.tar.bz2
+10 - INSTALAÇÃO DE PACOTES
+# Procure um pacote por palavra-chave.
+palavra-chave de pesquisa yum
+
+#Instala o pacote.
+pacote de instalação yum
+
+# Exibe a descrição e informações resumidas sobre o pacote.
+pacote de informações yum
+
+# Instale o pacote do arquivo local chamado package.rpm
+rpm -i pacote.rpm
+
+# Remova/desinstale o pacote.
+yum remover pacote
+
+# Instale o software a partir do código-fonte.
+código-fonte tar zxvf.tar.gz
+código fonte do cd
+./configure
+faço
+fazer instalar
+11 - PESQUISA
+# Procura por padrão no arquivo
+arquivo de padrão grep
+
+# Procura recursivamente por padrão no diretório
+grep -r diretório padrão
+
+# Encontre arquivos e diretórios por nome
+localizar nome
+
+# Encontre arquivos em /home/john que comecem com "prefix".
+encontre /home/john -name 'prefixo*'
+
+# Encontre arquivos maiores que 100 MB em /home
+encontrar /home -size +100M
+12 - LOGINS SSH
+# Conecte-se ao host como seu nome de usuário local.
+host ssh
+
+# Conecte-se ao host como usuário
+ssh usuário@host
+
+# Conecte-se ao host usando a porta
+ssh -p porta usuário@host
+13 - TRANSFERÊNCIAS DE ARQUIVOS
+# Copiar arquivo.txt seguro para a pasta /tmp no servidor
+scp arquivo.txt servidor:/tmp
+
+# Copie os arquivos *.html do servidor para a pasta local /tmp.
+servidor scp:/var/www/*.html /tmp
+
+# Copie todos os arquivos e diretórios recursivamente do servidor para a pasta /tmp do sistema atual.
+scp -r servidor:/var/www /tmp
+
+# Sincroniza /home com /backups/home
+rsync -a /home /backups/
+
+# Sincronize arquivos/diretórios entre o sistema local e remoto com a compactação habilitada
+rsync -avz /home server:/backups/
+14 - USO DO DISCO
+# Mostra o espaço livre e usado em sistemas de arquivos montados
+df -h
+
+# Mostra inodes livres e usados ​​em sistemas de arquivos montados
+df -i
+
+# Exibe tamanhos e tipos de partições de discos
+fdisk -l
+
+# Exibe o uso do disco para todos os arquivos e diretórios em formato legível por humanos
+du-ah
+
+# Exibe o uso total do disco fora do diretório atual
+du -sh
+15 - NAVEGAÇÃO NO DIRETÓRIO
+# Para subir um nível da árvore de diretórios. (Mude para o diretório pai.)
+cd ..
+
+# Vá para o diretório $HOME
+cd
+
+# Mude para o diretório /etc
+cd /etc
