@@ -118,11 +118,12 @@ Exemplo:
     chroot_local_user=YES
     
   Adicionar:
-    allow_writeable_chroot=YES
-    pasv_enable=YES
-    pasv_min_port=1024
-    pasv_max_port=1048
-    write_enable=YES
+  	
+  	allow_writeable_chroot=YES
+  	pasv_enable=YES
+  	pasv_min_port=1024
+  	pasv_max_port=1048
+	write_enable=YES
     
 ```
 
@@ -170,6 +171,10 @@ Outros:
 chmod o+rwx <nome_do_ficheiro/pasta>
 ```
 
+montar a pasta:
+```
+mout --bind /var/www/central/ /home/central/
+```
 # Instalar BIND
 ## 3.1 Instalar BIND
 
@@ -352,3 +357,4 @@ $ sudo firewall-cmd --add-port=3389/tcp --permanent
 ```
 $ sudo firewall-cmd --reload
 ```
+
